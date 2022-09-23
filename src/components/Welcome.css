@@ -1,0 +1,38 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: no-repeat, linear-gradient(45deg, #2c4430f5, #171717f5);
+
+}
+
+#welcome div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+img {
+    width: 275px;
+}
+
+button {
+    color: #2cc870;
+    background-color: #05562b;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border: none;
+}
+
+button:hover {
+   filter: brightness(0.9); 
+   cursor: pointer;
+}
+
+button:active {
+    filter: brightness(0.8); 
+}
