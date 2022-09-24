@@ -14,7 +14,6 @@ function App() {
       {quizState.gameStage === "Start" && <Welcome/>}
       {quizState.gameStage === "Playing" && <Questions/>}
       {quizState.gameStage === "End" && <Welcome/>}
-
     </div>
   );
 }
