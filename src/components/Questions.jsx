@@ -1,41 +1,62 @@
-import React from 'react'
-import './Questions.css'
 import logo from '../img/sm.png'
 
+import { useContext } from 'react'
+import { QuizContext } from '../context/quiz'
+
+import Option from '../components/Option'
+
+import './Questions.css'
+
+
 const Questions = () => {
-  return (
-    <div className='questions-wrapper'>
-        <div className='questions'>
-            <div className='header'>
-                <img className='logo-sm' src={logo} alt="logotipo"/>
-                <div>Qual a capital da Bahia?</div>
-            </div>
+    const [quizState, dispatch] = useContext(QuizContext)
+    const currentQuestion = quizState.questions[quizState.currentQuestion]
 
-            
-            <div className='options'>
+    const onSelectOption = (option) => {
+        dispatch({
+          type: "CHECK_ANSWER",
+          payload: { option },
+        });
+      };
 
+    return (
+        <div className='questions-wrapper'>
+            <div className='questions'>
+                <div className='header'>
+                    <img className='logo-sm' src={logo} alt="logotipo"/>
+                    <div>{currentQuestion.question}</div>
+                </div>
 
                 
-                <input className='d-none' type="radio" name="questions" id="question_4"/>
-                <label for="question_4" className='option'>
-                    <div className='option-number-wrapper'>
-                        <div className='option-number'>
-                            <div className='number'>
-                                4
-                            </div>
-                            
-                        </div>
-                    </div>
+                <div id='options'>
+                    {
+                        currentQuestion.options.map((option, index) => (
+                            <Option option={option} key={option} index={index} answer={currentQuestion.answer} selectOption={() => onSelectOption(option)}/>
+                        ))
+                    }
+                </div>
 
-                    <div className='option-answer'>
-                        Manaus
-                    </div>
-                </label>
+                <div className='actions'>
+                    {quizState.answerSelected && (
+                        <button onClick={() => dispatch({ type: "CONFIRM_ANSWER", payload: { answer: currentQuestion.answer }, })}>
+                            Confirmar
+                        </button>
+                        
+                    )}
+
+                    {quizState.answerConfirmed && (
+                        <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
+                            Continuar
+                        </button>
+                    )}
+                </div>
+
+
+
+
             </div>
-
         </div>
-    </div>
-  )
+    )
 }
 
 export default Questions

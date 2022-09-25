@@ -28,5 +28,17 @@ const data = [
             "Pérola"
         ],
         answer: "Diamante"
+    },
+    {
+        question: "Qual é a fruta mais produzida no baixo sul da Bahia",
+        options: [
+            "Banana",
+            "Graviola",
+            "Cacau",
+            "Manga"
+        ],
+        answer: "Banana"
     }
 ]
+
+export default data;
