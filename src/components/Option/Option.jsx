@@ -1,6 +1,6 @@
 
 import { useContext } from 'react'
-import { QuizContext } from '../context/quiz'
+import { QuizContext } from '../../context/quiz'
 
 import './Option.css' 
 
@@ -8,7 +8,7 @@ const Option = (props) => {
     const [quizState, dispatch] = useContext(QuizContext)
 
     return (
-        <div >
+        <div className={props.hide ? 'hide' : null}>
             <input onChange={() => props.selectOption()} className='d-none' type="radio" name="questions" id={`question_${props.index}`} disabled={quizState.answerConfirmed}/>
             <label htmlFor={`question_${props.index}`} className={`option ${quizState.answerConfirmed && props.option === props.answer ? "correct" : ""}` }>
                 

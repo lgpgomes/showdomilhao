@@ -38,6 +38,36 @@ const data = [
             "Manga"
         ],
         answer: "Banana"
+    },
+    {
+        question: "Uma novena corresponde a quantos dias?",
+        options: [
+            "90",
+            "900",
+            "9",
+            "9000"
+        ],
+        answer: "9"
+    },
+    {
+        question: "A copa do mundo de 2014 foi disputada em qual país?",
+        options: [
+            "Rússia",
+            "Jamaica",
+            "Brasil",
+            "França"
+        ],
+        answer: "Brasil"
+    },
+    {
+        question: "Quem é o maior campeão da Fórmula 1?",
+        options: [
+            "Lewis Hamilton",
+            "Schumacher",
+            "Ayrton Senna",
+            "Sebastian Vettel"
+        ],
+        answer: "Lewis Hamilton"
     }
 ]
 

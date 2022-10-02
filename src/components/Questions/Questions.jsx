@@ -1,9 +1,10 @@
-import logo from '../img/sm.png'
+import logo from '../../img/sm.png'
 
 import { useContext } from 'react'
-import { QuizContext } from '../context/quiz'
+import { QuizContext } from '../../context/quiz'
 
-import Option from '../components/Option'
+import Option from '../Option/Option'
+import Modal from '../Modal/Modal'
 
 import './Questions.css'
 
@@ -16,11 +17,13 @@ const Questions = () => {
         dispatch({
           type: "CHECK_ANSWER",
           payload: { option },
-        });
-      };
+        })
+      }
 
     return (
+        
         <div className='questions-wrapper'>
+            
             <div className='questions'>
                 <div className='header'>
                     <img className='logo-sm' src={logo} alt="logotipo"/>
@@ -31,10 +34,14 @@ const Questions = () => {
                 <div id='options'>
                     {
                         currentQuestion.options.map((option, index) => (
-                            <Option option={option} key={option} index={index} answer={currentQuestion.answer} selectOption={() => onSelectOption(option)}/>
+                            <Option hide={ quizState.optionsForRemove.includes(option) ? 'hide' : null } option={option} key={option} index={index} answer={currentQuestion.answer} selectOption={() => onSelectOption(option)}/>
                         ))
+                        
                     }
+
                 </div>
+
+                
 
                 <div className='actions'>
                     {quizState.answerSelected && (
@@ -49,13 +56,20 @@ const Questions = () => {
                             Continuar
                         </button>
                     )}
+
+                    <button onClick={() => dispatch({ type: "OPEN_MODAL_CARDS" })}>
+                        Cards
+                    </button>
+
                 </div>
-
-
-
-
             </div>
+            
+
+            <Modal show={quizState.modal_cards_visible}/>
         </div>
+
+        
+        
     )
 }
 

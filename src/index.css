@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', system-ui;
-  color: #fff;
 }
 
 body {
@@ -17,12 +16,12 @@ img {
 }
 
 button {
-  color: #0EC062;
-  background-color: #05562b;
+  color: #56bbdb;
+  background-color: #004564;
   border-radius: 50px;
   font-size: 16px;
-  font-weight: 700;
-  padding: 6px 18px;
+  font-weight: 600;
+  padding: 6px 14px;
   border: none;
 }
 

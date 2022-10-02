@@ -1,0 +1,31 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: no-repeat, linear-gradient(45deg, #2c4430f5, #171717f5); /*0b9dc45e*/
+}
+
+#welcome::before {
+    content: "Este é um site para estudos e aprendizagem";
+    position: absolute;
+    color: #aaa;
+    right: 10px;
+    transform: rotate(180deg);
+
+    line-height: 0;
+    font-size: 10px;
+    writing-mode: vertical-rl;
+}
+
+#welcome div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+img {
+    width: 230px;
+}
+

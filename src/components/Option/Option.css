@@ -4,9 +4,13 @@
     display: flex;
 }
 
+.hide {
+    visibility: hidden;
+}
+
 
 .option-number-wrapper {
-    background: linear-gradient(45deg, #3D6DF8, transparent);
+    background: #3D6DF8;
     padding: 0px 0px 0px 14px;
     border-radius: 4px 0px 0px 4px;
 }
@@ -16,7 +20,7 @@
     padding: 4px 24px;
     transform: skew(24deg);
     border-radius: 4px 0px 0px 4px;
-    margin: -2.7px;
+    margin: -2.2px;
 }
 
 .option-number:after {
@@ -53,7 +57,7 @@
 }
 
 input[type=radio]:checked + .option .option-number-wrapper{
-    background: linear-gradient(45deg, #F8D237, transparent);
+    background: #F8D237;
 }
 
 input[type=radio]:checked + .option .option-number {

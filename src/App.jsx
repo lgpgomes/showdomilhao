@@ -4,16 +4,16 @@ import { useContext } from 'react'
 import { QuizContext } from './context/quiz'
 import { useEffect } from 'react'
 
-import Welcome from './components/Welcome'
-import Questions from './components/Questions'
-import End from './components/End'
+import Welcome from './components/Welcome/Welcome'
+import Questions from './components/Questions/Questions'
+import End from './components/End/End'
 
 
 function App() {
   const [quizState, dispatch] = useContext(QuizContext)
   
   useEffect(() => {
-    dispatch({type: "REORDER_QUESTIONS"})
+    dispatch({type: "REORDER_QUESTIONS_AND_CARDS"})
   }, [])
 
   return (
