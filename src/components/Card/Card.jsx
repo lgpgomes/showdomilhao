@@ -1,15 +1,9 @@
-
-import { useContext } from 'react'
-import { QuizContext } from '../../context/quiz'
-
 import './Card.css'
 
 const Card = (props) => {
-    const [quizState, dispatch] = useContext(QuizContext)
-
     return (
     <div className='card' onClick={() => props.selectCard()} >
-        <div className={`card-inner ${quizState.card.value === props.card.value ? 'flip' : ''}`}>
+        <div className={`card-inner ${props.flip ? 'flip' : ''}`}>
 
             <div className='card-back'>
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 512.000000 512.000000">

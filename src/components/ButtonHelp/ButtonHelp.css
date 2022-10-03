@@ -1,0 +1,40 @@
+.button-help {
+    position: relative;
+    width: 55px;
+}
+
+.button-help:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.button-help:active {
+    filter: brightness(0.8); 
+  }
+  
+.button-help-content {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-help-bg {
+    filter: drop-shadow(0px 0px 4px rgba(200, 200, 200, 0.3));
+
+}
+
+.icon-cards {
+    width: 60%;
+    fill: #f1f1f1;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.45;
+}

@@ -19,12 +19,12 @@ const Modal = (props) => {
       
     if (!props.show) return null
     return (
-        <div className='modal'>
+        <div className={`modal ${props.show ? 'show' : ''} `}>
             <div className='modal-content'>
                 <div className='cards'>
                     {
                         quizState.cards.map((card) => (
-                            <Card key={card.value} card={card} selectCard={() => onSelectCard(card)}/>
+                            <Card key={card.value} flip={quizState.cardSelected === card} card={card} selectCard={() => onSelectCard(card)}/>
                         ))
                     }
 

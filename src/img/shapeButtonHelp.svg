@@ -1,0 +1,16 @@
+<svg className='button-help-bg' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+    <defs>
+        <linearGradient id="eOc0tvPRjhg3-stroke" x1="0" y1="1" x2="0.524911" y2="-0.090493" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)">
+            <stop id="eOc0tvPRjhg3-stroke-0" offset="74.6487%" stopColor="#0EC062"/>
+            <stop id="eOc0tvPRjhg3-stroke-1" offset="100%" stopColor="#13CE7D"/>
+        </linearGradient>
+        <linearGradient id="eOc0tvPRjhg4-fill" x1="0.5" y1="0" x2="0.5" y2="0.977433" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)">
+            <stop id="eOc0tvPRjhg4-fill-0" offset="0%" stopColor="#303030"/>
+            <stop id="eOc0tvPRjhg4-fill-1" offset="43%" stopColor="#454545"/>
+        </linearGradient>
+    </defs>
+    <g transform="matrix(1.354033 0 0 1.354033-53.104961-53.10494)">
+        <polygon points="0,-113.028328 107.496328,-31.433186 107.496328,92.159234 -107.496328,92.159234 -107.496328,-113.028328 0,-113.028328" transform="translate(150 160.43454)" fill="none" stroke="url(#eOc0tvPRjhg3-stroke)" strokeWidth="5.85"/>
+        <polygon points="0,-113.028328 107.496328,-31.433186 107.496328,92.159234 -107.496328,92.159234 -107.496328,-113.028328 0,-113.028328" transform="matrix(.92 0 0 0.92 150 160.736771)" fill="url(#eOc0tvPRjhg4-fill)"/>
+    </g>
+</svg>

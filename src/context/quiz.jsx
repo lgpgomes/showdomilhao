@@ -16,16 +16,14 @@ const initialState = {
     questions,
     currentQuestion: 0,
     score: 0,
-    card: 0,
-
 
     answerSelected: false,
     answerConfirmed: false,
+
     award: AWARDS,
-    cards: CARDS,
 
+    cardSelected: 0,
     optionsForRemove: [],
-
 }
 
 
@@ -65,7 +63,7 @@ const quizReducer = (state, action) => {
         case "CHANGE_QUESTION": 
             if (state.currentQuestion - state.score >= 3) return state
 
-            var nextQuestion = state.currentQuestion + 1
+            let nextQuestion = state.currentQuestion + 1
             let endGame = false
 
             if (!state.questions[nextQuestion] || state.answerConfirmed === 'incorrect') endGame = true
@@ -100,35 +98,39 @@ const quizReducer = (state, action) => {
 
             return {
                 ...state,
-                modal_cards_visible: 1
+                modalCardsVisible: 1
             }
 
         case "CLOSE_MODAL_CARDS":
 
             return {
                 ...state,
-                modal_cards_visible: 0
+                modalCardsVisible: 0
             }
-
+    
         case "CARD_SELECTED":
-            if (state.card) return state
+            if (state.cardSelected) return state
+
             const card = action.payload.card
             const questionForRemoveOptions = questions[state.currentQuestion]
 
-
             let optionsForRemove = []
 
-            questionForRemoveOptions.options.map((option) => {
-                if ( (option !== questionForRemoveOptions.answer) && (optionsForRemove.length < card.cardsForRemove)) {
+            questionForRemoveOptions.options.map((option) => (
+                (option !== questionForRemoveOptions.answer) && (
                     optionsForRemove.push(option)
-                }
-              })
+                )
+            ))
+            
+            const reorderedOptionsForRemove = optionsForRemove.sort(() => {
+                return Math.random() - 0.5
+            }).slice(0, card.cardsForRemove)
 
 
             return {
                 ...state,
-                card: card,
-                optionsForRemove
+                cardSelected: card,
+                optionsForRemove: reorderedOptionsForRemove
             }
 
             
@@ -141,7 +143,6 @@ export const QuizContext = createContext()
 
 export const QuizProvider = ({children}) => {
     const value = useReducer(quizReducer, initialState)
-
     return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
 }
 

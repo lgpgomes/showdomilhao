@@ -8,7 +8,7 @@
 }
 
 #welcome::before {
-    content: "Este é um site para estudos e aprendizagem";
+    content: "Este é um site para estudos e aprendizagem ";
     position: absolute;
     color: #aaa;
     right: 10px;

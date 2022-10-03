@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 150" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+    <defs>
+        <linearGradient id="eVKk8y1ilCQ3-stroke" x1="0" y1="1" x2="0.524911" y2="-0.090493" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)">
+            <stop id="eVKk8y1ilCQ3-stroke-0" offset="74.6487%" stopColor="#00ba40"/>
+            <stop id="eVKk8y1ilCQ3-stroke-1" offset="100%" stopColor="#47f482"/>
+        </linearGradient>
+    </defs>
+    <g transform="matrix(1.354033 0 0 1.354033-53.104961-53.10494)">
+        <polygon points="73.853452,-113.42666 107.496328,-80.151028 107.496328,-11.165707 -107.496328,-11.165707 -107.496328,-113.028328 73.853452,-113.42666" transform="translate(149.391485 156.297577)" fill="none" stroke="url(#eVKk8y1ilCQ3-stroke)" strokeWidth="5.8"/>
+    </g>
+</svg>

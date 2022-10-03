@@ -5,9 +5,9 @@ import { QuizContext } from '../../context/quiz'
 
 import Option from '../Option/Option'
 import Modal from '../Modal/Modal'
+import CircleMenu from '../CircleMenu/CircleMenu'
 
 import './Questions.css'
-
 
 const Questions = () => {
     const [quizState, dispatch] = useContext(QuizContext)
@@ -21,16 +21,13 @@ const Questions = () => {
       }
 
     return (
-        
         <div className='questions-wrapper'>
-            
             <div className='questions'>
                 <div className='header'>
                     <img className='logo-sm' src={logo} alt="logotipo"/>
                     <div>{currentQuestion.question}</div>
                 </div>
 
-                
                 <div id='options'>
                     {
                         currentQuestion.options.map((option, index) => (
@@ -38,17 +35,13 @@ const Questions = () => {
                         ))
                         
                     }
-
                 </div>
-
-                
 
                 <div className='actions'>
                     {quizState.answerSelected && (
                         <button onClick={() => dispatch({ type: "CONFIRM_ANSWER", payload: { answer: currentQuestion.answer }, })}>
                             Confirmar
                         </button>
-                        
                     )}
 
                     {quizState.answerConfirmed && (
@@ -56,16 +49,22 @@ const Questions = () => {
                             Continuar
                         </button>
                     )}
-
-                    <button onClick={() => dispatch({ type: "OPEN_MODAL_CARDS" })}>
-                        Cards
-                    </button>
-
                 </div>
             </div>
-            
 
-            <Modal show={quizState.modal_cards_visible}/>
+            <div className='helps'>
+                <CircleMenu />
+            </div>
+             
+             
+             
+             
+             
+             
+             
+             
+             
+                <Modal show={quizState.modalCardsVisible}/>
         </div>
 
         
